@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-100">
+  <div class="max-w-6xl mx-auto p-6">
+    <div class="bg-blue-600 text-white p-6 rounded-lg text-center text-2xl font-bold mb-6">
+      Weather Dashboard
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Left Section: Search & Current Location -->
+      <div class="bg-white p-6 rounded-lg shadow-md flex flex-col gap-4">
+        <label class="block text-gray-700 font-semibold">Enter a City Name</label>
+        <input id="cityInput" type="text" placeholder="E.g., New York, London, Tokyo" class="w-full p-2 border rounded">
+        <button onclick="fetchWeather()" class="w-full bg-blue-500 text-white py-2 rounded">Search</button>
+        <div class="text-center text-gray-500 font-semibold">or</div>
+        <button onclick="fetchCurrentLocationWeather()" class="w-full bg-gray-600 text-white py-2 rounded">Use Current
+          Location</button>
+
+        <label class="block text-gray-700 font-semibold mt-4 hidden" id="recentSearchesLabel">Recently Searched
+          Cities</label>
+        <select id="recentSearches" class="w-full p-2 border rounded hidden" onchange="handleRecentCitySelection()">
+        </select>
+      </div>
+
+      <!-- Right Section: Weather & Forecast -->
+      <div class="lg:col-span-2">
+        <div id="weatherInfo" class="p-6 bg-blue-500 text-white rounded-lg shadow-md hidden">
+          <div class="flex justify-between items-center">
+            <h2 id="cityName" class="text-xl font-bold"></h2>
+            <p id="condition"></p>
+          </div>
+          <p id="temperature" class="text-lg"></p>
+          <p id="wind"></p>
+          <p id="humidity"></p>
+        </div>
+
+        <h3 class="mt-6 text-lg font-semibold text-gray-700 hidden" id="forecastTitle">5-Day Forecast</h3>
+        <div id="forecast" class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 hidden">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
