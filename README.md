@@ -1,6 +1,9 @@
 ## Hey 👋, I'm [Sajal Debnath]
 <br>
 
+Github Repo: https://github.com/Sajal4/DOM-JS-Assignment/tree/JS_Project
+<br>
+
 This is the repesntation How the project Look like
 <br><br>
 ![Project Image](image.png)
